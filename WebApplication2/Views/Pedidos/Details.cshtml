@@ -1,0 +1,43 @@
+﻿@model WebApplication2.Models.Pedidos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Pedidos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.NomeCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.NomeCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Produtos.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produtos.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPedido)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdPedidos }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

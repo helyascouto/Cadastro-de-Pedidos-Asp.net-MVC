@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication2.Models.Pedidos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar Novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Clientes.NomeCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Produtos.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Clientes.NomeCompleto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produtos.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPedido)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdPedidos }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.IdPedidos }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.IdPedidos })
+        </td>
+    </tr>
+}
+
+</table>
